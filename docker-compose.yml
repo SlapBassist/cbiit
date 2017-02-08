@@ -1,0 +1,26 @@
+version: '2'
+services:
+  db:
+    build:
+      context: ./db
+    image: cbiit/db:latest
+    environment:
+      POSTGRES_DB: cbiit
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+    ports:
+      - "127.0.0.1:5432:5432"
+  api:
+    build:
+      context: ./api/cbiit-service
+    image: cbiit/api:latest
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db/cbiit
+    ports:
+      - "127.0.0.1:8080:8080"
+  web:
+    build:
+      context: ./web
+    image: cbiit/web:latest
+    ports:
+      - "127.0.0.1:3000:3000"

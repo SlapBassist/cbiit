@@ -1,0 +1,31 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Clinical Trials</h2>
+    </div>
+  </div>
+
+  <div class="row" infinite-scroll="vm.loadMore();">
+    <div class="col-xs-12">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Official Title</th>
+            <th>Phase</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr ng-repeat="row in vm.rows">
+            <td>{{ row.id }}</td>
+            <td>{{ row.officialTitle }}</td>
+            <td>{{ row.phase }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
