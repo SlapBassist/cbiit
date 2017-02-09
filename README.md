@@ -9,3 +9,8 @@ Installation instructions:
 --------------------------
 
 docker-compose up --build --force-recreate
+
+Viewing Application:
+--------------------------
+
+http://localhost:3000
